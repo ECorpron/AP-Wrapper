@@ -1,12 +1,14 @@
 import requests
 
 class APIWrapper():
-    keys = {}
-    request = {}
+    keys
+    request
     statusCode
 
-    def __init__():
-        pass
+    def __init__(self, keys = None, request = None):
+        self.keys = keys
+        self.request = request
+        statusCode = None
 
     def addValue({key, value}):
         keys[key] = value
