@@ -1,21 +1,14 @@
 import requests
 
 class APIWrapper():
-    keys
-    request
-    statusCode
 
     def __init__(self, keys = None, request = None):
         self.keys = keys
         self.request = request
         statusCode = None
 
-    def addValue({key, value}):
-        keys[key] = value
-        return keys
-
-    def updateValue({key, value}):
-        keys.update({key, value})
+    def updateValue(dict):
+        keys.update(dict)
         return keys
 
     def getKeys():
@@ -38,12 +31,8 @@ class APIWrapper():
     def deleteAllKeys():
         keys.clear()
 
-    def addRequest({key, value}):
-        request[key] = value
-        return request
-
-    def updateRequest({key, value}):
-        request.update({key, value})
+    def updateRequest(dict):
+        request.update(dict)
         return request
 
     def addRequests(dict):

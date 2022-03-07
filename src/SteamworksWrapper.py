@@ -1,13 +1,7 @@
 import requests
-from .APIWrapper import APIWrapper
+from src import APIWrapper
 
-class SteamworksWrapper(ApiWrapper):
-    apiKey
-    profileId
-
-    profileRequests = {}
-    gameAchRequests = {}
-
+class SteamworksWrapper(APIWrapper):
     gameIds = {"ARK": 376030, "Chivalry 2": 1824220}
     gameAchString = "http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=%d"
 
