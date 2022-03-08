@@ -1,2 +1,8 @@
 # GeneralAPIWrapper
-Project for Data 515. Contains an API wrapper interface
+## Getting Started
+To install the GeneralAPIWrapper module use the command
+    pip install -i https://test.pypi.org/simple/ GeneralAPIWrapper
+
+Then import the apiWrapper and SteamworksApiWrapper with the statements
+    import generalapiwrapper.apiWrapper as api
+    import generalapiwrapper.SteamworksWrapper as steamApi
