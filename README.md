@@ -6,5 +6,5 @@ To install the GeneralAPIWrapper module use the command
 
 Then import the apiWrapper and SteamworksApiWrapper with the statements
     
-    import generalapiwrapper.apiWrapper as api
-    import generalapiwrapper.SteamworksWrapper as steamApi
+    import generalapiwrapper.apiWrapper
+    import generalapiwrapper.SteamworksWrapper
