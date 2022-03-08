@@ -1,6 +1,6 @@
 import requests
-from Wrappers.APIWrapper import APIWrapper
-from Wrappers.SteamworksWrapper import SteamworksWrapper
+import generalapiwrapper.apiWrapper as api
+import generalapiwrapper.SteamworksWrapper as steamApi
 
 # Only using the Requests package
 gameId = 1172470
@@ -12,11 +12,11 @@ print(ach.text)
 # Using the APIWrapper class
 getAch = {"getGameAch": achRequest}
 
-apiWrap = APIWrapper()
+apiWrap = api.APIWrapper()
 apiWrap.updateGetRequests(getAch)
 
-apiWrap.executeGet("getGameAch")
+print(apiWrap.executeGet("getGameAch").text)
 
 # Using the SteamworksWrapper class
-steamWrap = SteamworksWrapper()
+steamWrap = steamApi.SteamworksWrapper()
 print(steamWrap.getGameAchievements(gameId))
