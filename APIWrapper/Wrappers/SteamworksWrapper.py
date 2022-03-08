@@ -1,5 +1,5 @@
 import requests
-from APIWrapper.APIWrapper import APIWrapper
+from Wrappers.APIWrapper import APIWrapper
 
 class SteamworksWrapper(APIWrapper):
     __apiKey = None
@@ -29,7 +29,7 @@ class SteamworksWrapper(APIWrapper):
         """
 
 
-    def getGameAchievments(self, gameId):
+    def getGameAchievements(self, gameId):
         achRequest = self.__gameAchString %gameId
 
         response = requests.get(achRequest)
