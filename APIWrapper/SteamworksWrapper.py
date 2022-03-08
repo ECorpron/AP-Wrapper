@@ -1,5 +1,5 @@
 import requests
-from API-Wrapper.APIWrapper import APIWrapper
+from APIWrapper.APIWrapper import APIWrapper
 
 class SteamworksWrapper(APIWrapper):
     __apiKey = None

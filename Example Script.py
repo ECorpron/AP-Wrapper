@@ -1,6 +1,6 @@
 import requests
-from API-Wrapper.APIWrapper import APIWrapper
-from API-Wrapper.SteamworksWrapper import SteamworksWrapper
+from APIWrapper.APIWrapper import APIWrapper
+from APIWrapper.SteamworksWrapper import SteamworksWrapper
 
 # Only using the Requests package
 gameId = 1172470
