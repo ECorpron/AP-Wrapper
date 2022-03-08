@@ -1,5 +1,5 @@
 # GeneralAPIWrapper
-## Getting Started
+## How to Install
 To install the GeneralAPIWrapper module use the command
     
     pip install -i https://test.pypi.org/simple/ GeneralAPIWrapper
