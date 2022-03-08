@@ -1,53 +1,69 @@
 import requests
 
 class APIWrapper():
+    getRequests = {}
+    postRequests = {}
+    keys = {}
+    statusCode = None
 
-    def __init__(self, keys = None, request = None):
-        self.keys = keys
-        self.request = request
-        statusCode = None
+    def __init__(self):
+        pass
 
-    def updateValue(dict):
-        keys.update(dict)
+    def updateValue(self, dict):
+        self.keys.update(dict)
         return keys
 
-    def getKeys():
-        return keys
+    def getKeys(self):
+        return self.keys
 
-    def getKey(key):
-        return keys[key]
+    def getKey(self, key):
+        return self.keys[key]
 
-    def replaceKeys(newKeys):
-        keys = newKeys
+    def replaceKeys(self, newKeys):
+        self.keys = newKeys
 
-    def addKeys(dict):
-        keys.update(dict)
-        return keys
+    def addKeys(self, dict):
+        self.keys.update(dict)
+        return self.keys
 
-    def deleteKey(key):
-        value = keys.pop(key)
+    def deleteKey(self, key):
+        value = self.keys.pop(key)
         return value
 
-    def deleteAllKeys():
-        keys.clear()
+    def deleteAllKeys(self):
+        self.keys.clear()
 
-    def updateRequest(dict):
-        request.update(dict)
-        return request
+    def updateGetRequests(self, dict):
+        self.getRequests.update(dict)
+        return self.getRequests
 
-    def addRequests(dict):
-        request.update(dict)
-        return request
+    def deleteGetRequest(self, key):
+        self.getRequests.remove(key)
+        return self.getRequests
 
-    def executeGet(key):
-        response = requests.get(request[key])
-        statusCode = response.status_code
+    def deleteAllGetRequests(self):
+        self.getRequests.clear()
+
+    def updatePostRequests(self, dict):
+        self.postRequests.update(dict)
+        return self.postRequests
+
+    def deletePostRequest(self, key):
+        self.postRequests.remove(key)
+        return self.postRequests
+
+    def deleteAllPostRequests(self):
+        self.postRequests.clear()
+
+    def executeGet(self, key):
+        response = requests.get(self.getRequests[key])
+        self.statusCode = response.status_code
         return response
 
-    def executePost(key):
-        response = requests.post(request[key])
-        statusCode = response.status_code
+    def executePost(self, key):
+        response = requests.post(self.getRequests[key])
+        self.statusCode = response.status_code
         return response
 
-    def getLastStatus():
-        return statusCode
+    def getLastStatus(self):
+        return self.statusCode

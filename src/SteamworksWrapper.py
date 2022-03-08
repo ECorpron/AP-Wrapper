@@ -1,23 +1,24 @@
 import requests
-from src import APIWrapper
+from src.APIWrapper import APIWrapper
 
 class SteamworksWrapper(APIWrapper):
+    apiKey = None
+    profileId = None
+    #profileRequests = profileRequests()
+    #gameAchRequests = self.gameAchRequests()
+    gameAchRequests = {}
+
     gameIds = {"ARK": 376030, "Chivalry 2": 1824220}
     gameAchString = "http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=%d"
 
+    """
+        def profileRequests(self):
+            getProfileString = f"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={self.apiKey}={self.profileId}"
+            profileRequests = {self.profileId: getProfileString}
+            return profileRequests
+    """
 
-    def __init__(self, key=None, profileId = None):
-        self.apiKey = key
-        self.profileId = profileId
-        self.profileRequests = profileRequests()
-        self.gameAchRequests = gameAchRequests()
-
-    def profileRequests():
-        getProfileString = f"http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key={self.apiKey}={self.profileId}"
-        profileRequests = {self.profileId: getProfileString}
-        return profileRequests
-
-    def gameAchRequests():
+    def gameAchRequests(self):
         gameAchRequests = {}
         for game in self.gameIds:
             achRequest = self.gameAchString %gameIds[game]
@@ -25,9 +26,9 @@ class SteamworksWrapper(APIWrapper):
 
         return gameAchRequests
 
-    def getGameAchievments(gameId):
+    def getGameAchievments(self, gameId):
         achRequest = self.gameAchString %gameId
 
-        response = requsts.get(achRequest)
+        response = requests.get(achRequest)
         jsonAch = response.json()
         return jsonAch
