@@ -31,7 +31,12 @@ class SteamworksWrapper(APIWrapper):
 
     def getGameAchievements(self, gameId):
         achRequest = self.__gameAchString %gameId
-
         response = requests.get(achRequest)
         jsonAch = response.json()
         return jsonAch
+
+    def setApiKey(self, key):
+        self.__apiKey = key
+
+    def setProfileId(self, id):
+        self.__profileId = id

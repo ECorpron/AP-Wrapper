@@ -1,9 +1,9 @@
 import requests
 
 class APIWrapper():
-    __getRequests = {}
-    __postRequests = {}
-    __keys = {}
+    __getRequests: dict[str, str] = {}
+    __postRequests: dict[str, str] = {}
+    __keys: dict[str, str] = {}
     statusCode = None
 
     def __init__(self):

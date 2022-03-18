@@ -3,7 +3,7 @@ import generalapiwrapper.apiWrapper as api
 import generalapiwrapper.SteamworksWrapper as steamApi
 
 # Only using the Requests package
-gameId = 1172470
+gameId = 1172470  # This is the game ID for Apex Legends
 achRequest = f'http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid={gameId}'
 
 ach = requests.get(achRequest)
