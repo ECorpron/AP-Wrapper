@@ -10,6 +10,24 @@ Then import the apiWrapper and SteamworksApiWrapper with the statements
     
     import generalapiwrapper.apiWrapper
     import generalapiwrapper.SteamworksWrapper
+
+## Key Features
+### APIWrapper
+The key feature of the ApiWrapper class is the ability to store and execute requests. This is done by storing requests in their corresponding dictionaries with the methods updateGetRequests() and updatePostRequests(), then executing them with the methods executeGet() and executePost() and passing in the corresponding key.
+
+    getRequest = {"key": "an api call"}
+    apiWrap = apiWrapper.APIWrapper()
+    apiWrap.updateGetRequests(getRequest)
+    returnBody = apiWrap.executeGet("getRequest")
     
+This then returns the object that comes from the requests package .get() method.
+
+### Steamworks
+The key feature of the SteamworksWrapper class is the ability to execute requests without the need to specify the request. Currently the only method is getGameAchievements(), which takes in a game ID for a game on steam, and then returns a json object with the information.
+
+    steamWrap = SteamworksWrapper.SteamworksWrapper()
+    returnBody = steamWrap.getGameAchievements(gameId))
+
+
 ## Dependencies
 requests
