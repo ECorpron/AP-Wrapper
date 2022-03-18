@@ -1,6 +1,11 @@
   # GeneralAPIWrapper
 There are two initial goals for this project. The first is to provide a generic api wrapper class that stores and executes any number of requests and returns a response body. The second is to have a class specifically for the Steamworks API that has built in functions for requests, and is able to extract entries in the response body.
   
+** NOTE FOR GRADING
+
+The example code worked when I made the presentation recording. I don't think I made any changes that would break the ability to install and run the
+example code, but I have not tested it recently so it is possible it does not work.
+
 ## How to Install
 To install the GeneralAPIWrapper module use the following command while in the directory the python project is in.
     
