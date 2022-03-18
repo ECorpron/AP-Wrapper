@@ -9,4 +9,3 @@ For this purpose, the classes shall be able to:
 - Store api calls in a dictionary and can be referenced by a specified string key
 - Execute a stored api call by being given the corresponding key through the requests package
 - be able to update and delete api calls from class dictionary
-
